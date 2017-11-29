@@ -1,0 +1,52 @@
+header.carousel {
+    height: 65vh;
+}
+
+.item {
+    background-color: #222;
+}
+
+.carousel-inner>.item>img.refurb {
+    height: 100%;
+    margin: 0 auto 0 auto;
+}
+
+.carousel-caption>h1, .carousel-caption>h2 {
+    position: relative;
+    color: white;
+}
+
+.carousel-caption>h1 {
+    font-weight: 50;
+    font-family: 'sans-serif';
+    text-transform: uppercase;
+    font-size: 80px;
+}
+
+.carousel-caption {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100%;
+}
+
+header.carousel .diagnostic {
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+}
+
+header.carousel .warranty {
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+}
+
+header.carousel .students {
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+}
