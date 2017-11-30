@@ -313,12 +313,12 @@
         <!-- Service List -->
         <!-- The circle icons use Font Awesome's stacked icon classes. For more information, visit http://fontawesome.io/examples/ -->
         <div class="row">
-            <div class="col-lg-12">
-                <h2 class="page-header" id="rates">Pricing
-                    <small>(10% off for students)</small>
-                </h2>
+            <div class="col-lg-12 page-header" id="rates">
+                <button class="tabs" id="normal">Normal Pricing</button>
+                <button class="tabs" id="student">Student Pricing</button>
+                <button class="tabs" id="business">Business Pricing</button>
             </div>
-            <Table class="table">
+            <Table class="table tabcontent" id="normal-price">
                 <thead>
                     <tr>
                         <td>
@@ -328,7 +328,7 @@
                                 </span>
                         </td>
                         <td>
-                            <h4 class="media-heading">Hardware Repair**</h4>
+                            <h4 class="media-heading">Hardware Repair</h4>
                         </td>
                         <td id="filler"></td>
                         <td id="filler"></td>
@@ -351,10 +351,10 @@
                         <td>
                             Laptop:
                             <br>
-                            <strong>$80.00</strong> + parts
+                            <strong>$70.00</strong> + parts
                             <br> Desktop:
                             <br>
-                            <strong>$70.00</strong> + parts
+                            <strong>$60.00</strong> + parts
                         </td>
                         <td>
                             <p>Flat charge for labor. All other costs will be due to replacement parts.</p>
@@ -448,7 +448,7 @@
                         </span>
                         </td>
                         <td>
-                            <h4 class="media-heading">On-site Service</h4>
+                            <h4 class="media-heading">On-site Service**</h4>
                         </td>
                         <td id="filler"></td>
                         <td id="filler"></td>
@@ -457,19 +457,545 @@
                 <tbody>
                     <tr>
                         <td id="filler"></td>
-                        <td>Distance</td>
-                        <td>
-                            <strong>$20.00 - $40.00</strong>
+                        <td>Labor (first 2 hrs)
                         </td>
                         <td>
-                            <p>Travel compensation, depending on distance</p>
+                            <strong>$70.00</strong>
+                        </td>
+                        <td>
+                            <p>This replaces the flat labor prices listed above.</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="filler"></td>
+                        <td>Labor (additional)
+                        </td>
+                        <td>
+                            <strong>$45.00</strong>/hr
+                        </td>
+                        <td>
+                            <p>This replaces the flat labor prices listed above.</p>
+                        </td>
+                    </tr>
+                </tbody>
+                <thead id="software">
+                    <tr>
+                        <td>
+                            <span class="fa-stack fa-2x">
+                              <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                              <i class="fa fa-download fa-stack-1x fa-inverse"></i>
+                        </span>
+                        </td>
+                        <td>
+                            <h4 class="media-heading">Software Installs</h4>
+                        </td>
+                        <td id="filler"></td>
+                        <td id="filler"></td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td id="filler"></td>
+                        <td>Operating System Install</td>
+                        <td>
+                            <strong>$60.00</strong>
+                        </td>
+                        <td>
+                            <p>Restores your computer to factory settings whilst removing <strong>all</strong> files</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="filler"></td>
+                        <td>Program Install</td>
+                        <td>
+                            <strong>$20.00</strong>/per program
+                        </td>
+                        <td>
+                            <p>Covers the installation of an individual program (Word, Photoshop, Avast!, etc.)</p>
+                        </td>
+                    </tr>
+                </tbody>
+                <thead>
+                    <tr>
+                        <td>
+                            <span class="fa-stack fa-2x">
+                              <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                              <i class="fa fa-bug fa-stack-1x fa-inverse"></i>
+                        </span>
+                        </td>
+                        <td>
+                            <h4 class="media-heading">Virus Removal</h4>
+                        </td>
+                        <td id="filler"></td>
+                        <td id="filler"></td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td id="filler"></td>
+                        <td>Virus Removal</td>
+                        <td>
+                            <strong>$55.00</strong>
+                        </td>
+                        <td>
+                            <p>Seek and Destroy. All viruses will be removed from the computer, guaranteed</p>
+                        </td>
+                    </tr>
+                </tbody>
+                <thead>
+                    <tr>
+                        <td>
+                            <span class="fa-stack fa-2x">
+                              <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                              <i class="fa fa-database fa-stack-1x fa-inverse"></i>
+                        </span>
+                        </td>
+                        <td>
+                            <h4 class="media-heading">Data Backup</h4>
+                        </td>
+                        <td id="filler"></td>
+                        <td id="filler"></td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td id="filler"></td>
+                        <td>Data Backup</td>
+                        <td>
+                            <strong>$1.00/1 GB</strong>
+                        </td>
+                        <td>
+                            <p>Data backup. Data that is needed immediately will require an expedition fee.</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="filler"></td>
+                        <td>Data Recovery</td>
+                        <td>
+                            <strong>$2.50/1 GB</strong>
+                        </td>
+                        <td>
+                            <p>File Recovery from a corrupt or broken hard drive.</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </Table>
+            <Table class="table tabcontent" id="student-price">
+                <thead>
+                    <tr>
+                        <td>
+                            <span class="fa-stack fa-2x">
+                                    <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                                    <i class="fa fa-laptop fa-stack-1x fa-inverse"></i>
+                                </span>
+                        </td>
+                        <td>
+                            <h4 class="media-heading">Hardware Repair</h4>
+                        </td>
+                        <td id="filler"></td>
+                        <td id="filler"></td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td id="filler"></td>
+                        <td>Diagnostic</td>
+                        <td>
+                            <strong>Free</strong>
+                        </td>
+                        <td>
+                            <p>Diagnostic only</p>
                         </td>
                     </tr>
                     <tr>
                         <td id="filler"></td>
                         <td>Labor</td>
                         <td>
-                            <strong>$45.00</strong> per hour
+                            Laptop:
+                            <br>
+                            <strong>$63.00</strong> + parts
+                            <br> Desktop:
+                            <br>
+                            <strong>$54.00</strong> + parts
+                        </td>
+                        <td>
+                            <p>Flat charge for labor. All other costs will be due to replacement parts.</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="filler"></td>
+                        <td id="mobile-repair">Expedited Service</td>
+                        <td>
+                            <strong>+ $35.00</strong>
+                        </td>
+                        <td>
+                            <p>Repairs are first come first serve. Paying the additional expedition fee will place you at the
+                                front of the queue. (For repairs that can't wait)</p>
+                        </td>
+                    </tr>
+                </tbody>
+                <thead>
+                    <tr>
+                        <td>
+                            <span class="fa-stack fa-2x">
+                              <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                              <i class="fa fa-mobile fa-stack-1x fa-inverse"></i>
+                        </span>
+                        </td>
+                        <td>
+                            <h4 class="media-heading">Mobile Repair*</h4>
+                        </td>
+                        <td id="filler"></td>
+                        <td id="filler"></td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td id="filler"></td>
+                        <td>Screen Replacement</td>
+                        <td>
+                            <strong>$40.50</strong> + new screen
+                        </td>
+                        <td>
+                            <p>Replace broken screen with a brand new one</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="filler"></td>
+                        <td>Battery Replacement</td>
+                        <td>
+                            <strong>$45.00</strong> + new battery
+                        </td>
+                        <td>
+                            <p>Replace a dead or quickly draining phone battery</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="filler"></td>
+                        <td>Speaker Replacement</td>
+                        <td>
+                            <strong>$36.00</strong> + new speaker
+                        </td>
+                        <td>
+                            <p>Replace a broken or dead phone speaker</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="filler"></td>
+                        <td>Charging Port</td>
+                        <td>
+                            <strong>$45.00</strong> + new port
+                        </td>
+                        <td>
+                            <p>Phone not charging? Replace the port and charge once more!</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="filler"></td>
+                        <td>Camera</td>
+                        <td>
+                            <strong>$54.00</strong> + new camera
+                        </td>
+                        <td>
+                            <p>Replace scratched, broken, or damaged camera lens</p>
+                        </td>
+                    </tr>
+                </tbody>
+                <thead>
+                    <tr>
+                        <td>
+                            <span class="fa-stack fa-2x">
+                              <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                              <i class="fa fa-truck fa-stack-1x fa-inverse"></i>
+                        </span>
+                        </td>
+                        <td>
+                            <h4 class="media-heading">On-site Service**</h4>
+                        </td>
+                        <td id="filler"></td>
+                        <td id="filler"></td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td id="filler"></td>
+                        <td>Labor (first 2 hrs)
+                        </td>
+                        <td>
+                            <strong>$63.00</strong>
+                        </td>
+                        <td>
+                            <p>This replaces the flat labor prices listed above.</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="filler"></td>
+                        <td>Labor (additional)
+                        </td>
+                        <td>
+                            <strong>$45.00</strong>/hr
+                        </td>
+                        <td>
+                            <p>This replaces the flat labor prices listed above.</p>
+                        </td>
+                    </tr>
+                </tbody>
+                <thead id="software">
+                    <tr>
+                        <td>
+                            <span class="fa-stack fa-2x">
+                              <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                              <i class="fa fa-download fa-stack-1x fa-inverse"></i>
+                        </span>
+                        </td>
+                        <td>
+                            <h4 class="media-heading">Software Installs</h4>
+                        </td>
+                        <td id="filler"></td>
+                        <td id="filler"></td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td id="filler"></td>
+                        <td>Operating System Install</td>
+                        <td>
+                            <strong>$54.00</strong>
+                        </td>
+                        <td>
+                            <p>Restores your computer to factory settings whilst removing <strong>all</strong> files</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="filler"></td>
+                        <td>Program Install</td>
+                        <td>
+                            <strong>$18.00</strong>/per program
+                        </td>
+                        <td>
+                            <p>Covers the installation of an individual program (Word, Photoshop, Avast!, etc.)</p>
+                        </td>
+                    </tr>
+                </tbody>
+                <thead>
+                    <tr>
+                        <td>
+                            <span class="fa-stack fa-2x">
+                              <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                              <i class="fa fa-bug fa-stack-1x fa-inverse"></i>
+                        </span>
+                        </td>
+                        <td>
+                            <h4 class="media-heading">Virus Removal</h4>
+                        </td>
+                        <td id="filler"></td>
+                        <td id="filler"></td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td id="filler"></td>
+                        <td>Virus Removal</td>
+                        <td>
+                            <strong>$49.50</strong>
+                        </td>
+                        <td>
+                            <p>Seek and Destroy. All viruses will be removed from the computer, guaranteed</p>
+                        </td>
+                    </tr>
+                </tbody>
+                <thead>
+                    <tr>
+                        <td>
+                            <span class="fa-stack fa-2x">
+                              <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                              <i class="fa fa-database fa-stack-1x fa-inverse"></i>
+                        </span>
+                        </td>
+                        <td>
+                            <h4 class="media-heading">Data Backup</h4>
+                        </td>
+                        <td id="filler"></td>
+                        <td id="filler"></td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td id="filler"></td>
+                        <td>Data Backup</td>
+                        <td>
+                            <strong>$0.90/1 GB</strong>
+                        </td>
+                        <td>
+                            <p>Data backup. Data that is needed immediately will require an expedition fee.</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="filler"></td>
+                        <td>Data Recovery</td>
+                        <td>
+                            <strong>$2.25/1 GB</strong>
+                        </td>
+                        <td>
+                            <p>File Recovery from a corrupt or broken hard drive.</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </Table>
+            <Table class="table tabcontent" id="business-price">
+                <thead>
+                    <tr>
+                        <td>
+                            <span class="fa-stack fa-2x">
+                                    <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                                    <i class="fa fa-laptop fa-stack-1x fa-inverse"></i>
+                                </span>
+                        </td>
+                        <td>
+                            <h4 class="media-heading">Hardware Repair</h4>
+                        </td>
+                        <td id="filler"></td>
+                        <td id="filler"></td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td id="filler"></td>
+                        <td>Diagnostic</td>
+                        <td>
+                            <strong>Free</strong>
+                        </td>
+                        <td>
+                            <p>Diagnostic only</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="filler"></td>
+                        <td>Labor</td>
+                        <td>
+                            Laptop:
+                            <br>
+                            <strong>$70.00</strong> + parts
+                            <br> Desktop:
+                            <br>
+                            <strong>$60.00</strong> + parts
+                        </td>
+                        <td>
+                            <p>Flat charge for labor. All other costs will be due to replacement parts.</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="filler"></td>
+                        <td id="mobile-repair">Expedited Service</td>
+                        <td>
+                            <strong>+ $35.00</strong>
+                        </td>
+                        <td>
+                            <p>Repairs are first come first serve. Paying the additional expedition fee will place you at the
+                                front of the queue. (For repairs that can't wait)</p>
+                        </td>
+                    </tr>
+                </tbody>
+                <thead>
+                    <tr>
+                        <td>
+                            <span class="fa-stack fa-2x">
+                              <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                              <i class="fa fa-mobile fa-stack-1x fa-inverse"></i>
+                        </span>
+                        </td>
+                        <td>
+                            <h4 class="media-heading">Mobile Repair*</h4>
+                        </td>
+                        <td id="filler"></td>
+                        <td id="filler"></td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td id="filler"></td>
+                        <td>Screen Replacement</td>
+                        <td>
+                            <strong>$45.00</strong> + new screen
+                        </td>
+                        <td>
+                            <p>Replace broken screen with a brand new one</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="filler"></td>
+                        <td>Battery Replacement</td>
+                        <td>
+                            <strong>$50.00</strong> + new battery
+                        </td>
+                        <td>
+                            <p>Replace a dead or quickly draining phone battery</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="filler"></td>
+                        <td>Speaker Replacement</td>
+                        <td>
+                            <strong>$40.00</strong> + new speaker
+                        </td>
+                        <td>
+                            <p>Replace a broken or dead phone speaker</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="filler"></td>
+                        <td>Charging Port</td>
+                        <td>
+                            <strong>$50.00</strong> + new port
+                        </td>
+                        <td>
+                            <p>Phone not charging? Replace the port and charge once more!</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="filler"></td>
+                        <td>Camera</td>
+                        <td>
+                            <strong>$60.00</strong> + new camera
+                        </td>
+                        <td>
+                            <p>Replace scratched, broken, or damaged camera lens</p>
+                        </td>
+                    </tr>
+                </tbody>
+                <thead>
+                    <tr>
+                        <td>
+                            <span class="fa-stack fa-2x">
+                              <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                              <i class="fa fa-truck fa-stack-1x fa-inverse"></i>
+                        </span>
+                        </td>
+                        <td>
+                            <h4 class="media-heading">On-site Service**</h4>
+                        </td>
+                        <td id="filler"></td>
+                        <td id="filler"></td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td id="filler"></td>
+                        <td>Labor (first 2 hrs)
+                        </td>
+                        <td>
+                            <strong>$70.00</strong>
+                        </td>
+                        <td>
+                            <p>This replaces the flat labor prices listed above.</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="filler"></td>
+                        <td>Labor (additional)
+                        </td>
+                        <td>
+                            <strong>$45.00</strong>/hr
                         </td>
                         <td>
                             <p>This replaces the flat labor prices listed above.</p>
@@ -587,7 +1113,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <p>*Phones may vary, call or ask beforehand if work can be done on your particular model</p>
-                        <p>**On-Site Repairs incur an additional fee of <strong>$20-$40</strong> depending on distance</p>
+                        <p>**On-Site Repairs incur an additional fee of <strong>$20</strong> upon job completion</p>
                         <p>Copyright &copy; Huletech 2017</p>
                     </div>
                 </div>
@@ -598,10 +1124,11 @@
 
         <!-- jQuery -->
         <script src="../js/jquery.js"></script>
+        <script src="../js/computer-repair.js"></script>
 
         <!-- Bootstrap Core JavaScript -->
         <script src="../js/bootstrap.min.js"></script>
-</div>
+    </div>
 </body>
 
 </html>
